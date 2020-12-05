@@ -1,0 +1,25 @@
+{
+  "pages": [
+    "pages/fund/fund",
+    "pages/logs/logs",
+    "pages/my/my",
+    "pages/yield/yield",
+    "pages/add/add"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      { "pagePath": "pages/fund/fund", "text": "基" },
+      { "pagePath": "pages/yield/yield", "text": "收益" },
+      { "pagePath": "pages/my/my", "text": "我的" }
+    ]
+  },
+  "useExtendedLib": { "weui": true },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

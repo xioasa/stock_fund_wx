@@ -1,0 +1,6 @@
+<!--index.wxml-->
+<view class="container">
+    <view class="page__bd">
+      <mp-searchbar bindselectresult="selectResult" placeholder="输入基金名称或者代码" search="{{search}}"></mp-searchbar>
+    </view>
+</view>
