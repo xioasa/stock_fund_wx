@@ -1,13 +1,28 @@
 //index.js
 //获取应用实例
 const app = getApp()
+const request = require('../../utils/request.js');
 
 Page({
   data: {
-    motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    loginDialog: false,
+    registerDialog: false,
+    buttons: [],
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    showTopTips: false,
+    formData: {},
+    rules: [
+      {
+        name: 'username',
+        rules: {required: true, message: '用户名不能为空'},
+      },
+      {
+        name: 'password',
+        rules: {required: true, message: '密码不能为空'},
+      }
+    ]
   },
   //事件处理函数
   bindViewTap: function() {
@@ -43,12 +58,57 @@ Page({
       })
     }
   },
-  getUserInfo: function(e) {
-    console.log(e)
-    app.globalData.userInfo = e.detail.userInfo
+  // 打开Login弹窗
+  toLogin: function () {
     this.setData({
-      userInfo: e.detail.userInfo,
-      hasUserInfo: true
+      loginDialog: true,
+      buttons: [{text: '去注册'}, {text: '确定'}]
     })
+  },
+  formInputChange(e) {
+    const {field} = e.currentTarget.dataset
+    this.setData({
+      [`formData.${field}`]: e.detail.value
+    })
+  },
+  loginDialogButton: function (e) {
+    const btnIdx = e.detail.index;
+    if(btnIdx === 1){
+      this.selectComponent('#loginForm').validate((valid, errors) => {
+        let url = "/login";
+        if (valid) {
+          request({
+            url,
+            success(res) {
+              console.log(res)
+              // resolve();
+            }
+          })
+        }else{
+          const firstError = Object.keys(errors)
+          if (firstError.length) {
+            this.setData({
+              error: errors[firstError[0]].message
+            })
+          }
+        }
+      })
+    }else{
+      let linkStr = !this.data.loginDialog ? '去注册' : '去登录';
+      this.setData({
+        buttons: [{text: linkStr}, {text: '确定'}],
+        loginDialog: !this.data.loginDialog,
+        registerDialog: !this.data.registerDialog
+      })
+    }
   }
+  // getUserInfo: function(e) {
+  //   if(e.detail.errMsg.indexOf("ok") != -1){
+  //     app.globalData.userInfo = e.detail.userInfo
+  //     this.setData({
+  //       userInfo: e.detail.userInfo,
+  //       hasUserInfo: true
+  //     })
+  //   }
+  // }
 })
