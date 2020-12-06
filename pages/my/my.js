@@ -12,14 +12,29 @@ Page({
     buttons: [],
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     showTopTips: false,
-    formData: {},
-    rules: [
+    loginForm: {},
+    registerForm: {},
+    loginRules: [
       {
         name: 'username',
         rules: {required: true, message: '用户名不能为空'},
       },
       {
         name: 'password',
+        rules: {required: true, message: '密码不能为空'},
+      }
+    ],
+    registerRules: [
+      {
+        name: 'username',
+        rules: {required: true, message: '用户名不能为空'},
+      },
+      {
+        name: 'password',
+        rules: {required: true, message: '密码不能为空'},
+      },
+      {
+        name: 'conFirmPwd',
         rules: {required: true, message: '密码不能为空'},
       }
     ]
@@ -66,24 +81,22 @@ Page({
     })
   },
   formInputChange(e) {
+    let fornName = this.data.loginDialog ? 'loginForm' : 'registerForm'
     const {field} = e.currentTarget.dataset
     this.setData({
-      [`formData.${field}`]: e.detail.value
+      [`${fornName}.${field}`]: e.detail.value
     })
   },
   loginDialogButton: function (e) {
     const btnIdx = e.detail.index;
+    console.log(e)
     if(btnIdx === 1){
-      this.selectComponent('#loginForm').validate((valid, errors) => {
-        let url = "/login";
-        if (valid) {
-          request({
-            url,
-            success(res) {
-              console.log(res)
-              // resolve();
-            }
-          })
+      let fornName = this.data.loginDialog ? 'loginForm' : 'registerForm'
+      this.selectComponent(`#${fornName}`).validate((valid, errors) => {
+        if (valid && fornName === "loginForm") {
+          this.confirmLogin()
+        }else if(valid && fornName === "registerForm"){
+          this.confirmRegister()
         }else{
           const firstError = Object.keys(errors)
           if (firstError.length) {
@@ -101,6 +114,30 @@ Page({
         registerDialog: !this.data.registerDialog
       })
     }
+  },
+  // 登录
+  confirmLogin: function(){
+    let url = "/login";
+    console.log(url)
+    request({
+      url,
+      success(res) {
+        console.log(res)
+        // resolve();
+      }
+    })
+  },
+  // 注册
+  confirmRegister: function(){
+    let url = "/register";
+    console.log(url)
+    request({
+      url,
+      success(res) {
+        console.log(res)
+        // resolve();
+      }
+    })
   }
   // getUserInfo: function(e) {
   //   if(e.detail.errMsg.indexOf("ok") != -1){
