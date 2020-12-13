@@ -4,10 +4,13 @@
     "pages/stock/add/add",
     "pages/fund/fund",
     "pages/logs/logs",
-    "pages/my/my",
     "pages/yield/yield",
     "pages/fund/add/add",
-    "pages/serch/serch"
+    "pages/serch/serch",
+    "pages/add/add",
+    "pages/my/my",
+    "pages/login/login",
+    "pages/register/register"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -20,7 +23,8 @@
     "list": [
       { "pagePath": "pages/stock/index", "text": "股票" },
       { "pagePath": "pages/fund/fund", "text": "基金" },
-      { "pagePath": "pages/yield/yield", "text": "收益" }
+      { "pagePath": "pages/yield/yield", "text": "收益" },
+      { "pagePath": "pages/my/my", "text": "我的" }
     ],
     "backgroundColor": "#ffffff"
   },

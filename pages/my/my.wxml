@@ -1,14 +1,18 @@
 <!--index.wxml-->
+<mp-toptips msg="{{error}}" type="error" show="{{error}}"></mp-toptips>
 <view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+  <view class="userinfo_box">
+    <block wx:if="{{!userInfo.user_name}}">
+      <button type="primary" bindtap="toLogin"> 登录/注册 </button>
+      <text class="userinfo_explain">登录后可在多设备间同步数据</text>
+    </block>
     <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+      <text>Hello, {{userInfo.user_name}}</text>
     </block>
   </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-  </view>
-  基金或者是股票
+  <mp-cells>
+    <mp-cell link value="云备份"></mp-cell>
+    <mp-cell link url="../index" value="云恢复"></mp-cell>
+  </mp-cells>
 </view>
+

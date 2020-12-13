@@ -2,6 +2,7 @@
 const { guid } = require('./utils/util.js');
 
 App({
+  baseUrl: "https://topnamei.top/api",
   onLaunch: function () {
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
