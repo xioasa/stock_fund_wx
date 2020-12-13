@@ -4,6 +4,6 @@
     "drag": "../../components/drag/index",
     "dp": "../../components/dp/index"
   },
-  "navigationBarTitleText": "基金",
+  "navigationBarTitleText": "股票",
   "enablePullDownRefresh": true
 }

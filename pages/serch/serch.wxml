@@ -1,0 +1,8 @@
+<view class="page__bd">
+	<mp-searchbar
+	 bindselectresult="selectResult"
+	 placeholder="{{placeholder}}"
+	 search="{{search}}"
+	></mp-searchbar>
+</view>
+

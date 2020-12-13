@@ -1,0 +1,85 @@
+<mp-toptips
+ msg="{{error}}"
+ type="error"
+ show="{{error}}"
+></mp-toptips>
+<view class="page" xmlns:wx="http://www.w3.org/1999/xhtml">
+	<view class="page__bd">
+		<mp-form id="form" models="{{formData}}">
+			<mp-cells>
+				<mp-cell
+				 prop="name"
+				 title="基金名"
+				 ext-class=""
+				>
+					<input
+					 bindinput="formInputChange"
+					 value="{{name}}"
+					 data-field="name"
+					 class="weui-input"
+					 disabled
+					 placeholder="基金名"
+					/>
+				</mp-cell>
+				<mp-cell
+				 prop="code"
+				 title="代码"
+				 ext-class=""
+				>
+					<input
+					 bindinput="formInputChange"
+					 value="{{code}}"
+					 data-field="code"
+					 class="weui-input"
+					 disabled
+					 placeholder="基金代码"
+					/>
+				</mp-cell>
+				<mp-cell
+				 prop="cost"
+				 title="持仓成本"
+				 ext-class=""
+				>
+					<input
+					 bindinput="formInputChange"
+					 value="{{cost}}"
+					 type="digit"
+					 data-field="cost"
+					 class="weui-input"
+					 placeholder="选填"
+					/>
+				</mp-cell>
+				<mp-cell
+				 prop="num"
+				 title="持仓份额"
+				 ext-class=""
+				>
+					<input
+					 bindinput="formInputChange"
+					 value="{{num}}"
+					 type="digit"
+					 data-field="num"
+					 class="weui-input"
+					 placeholder="选填"
+					/>
+				</mp-cell>
+			</mp-cells>
+		</mp-form>
+
+		<view class="weui-btn-area">
+			<button
+			 class="weui-btn"
+			 type="primary"
+			 bindtap="submitForm"
+			>确定
+			</button>
+			<button
+			 class="weui-btn"
+			 type="warn"
+			 bindtap="onDel"
+			>删除
+			</button>
+		</view>
+	</view>
+</view>
+

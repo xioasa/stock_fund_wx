@@ -1,0 +1,104 @@
+<mp-toptips
+ msg="{{error}}"
+ type="error"
+ show="{{error}}"
+></mp-toptips>
+<view class="page" xmlns:wx="http://www.w3.org/1999/xhtml">
+	<view class="page__bd">
+		<mp-form id="form" models="{{formData}}">
+			<mp-cells title="基本信息">
+				<mp-cell
+				 prop="name"
+				 title="基金名"
+				 ext-class=""
+				>
+					<input
+					 bindinput="formInputChange"
+					 value="{{name}}"
+					 data-field="name"
+					 class="weui-input"
+					 disabled
+					 placeholder="股票名称"
+					/>
+				</mp-cell>
+				<mp-cell
+				 prop="code"
+				 title="代码"
+				 ext-class=""
+				>
+					<input
+					 bindinput="formInputChange"
+					 value="{{code}}"
+					 data-field="code"
+					 class="weui-input"
+					 disabled
+					 placeholder="股票代码"
+					/>
+				</mp-cell>
+				<mp-cell
+				 prop="initPrice"
+				 title="持仓价"
+				 ext-class=""
+				>
+					<input
+					 bindinput="formInputChange"
+					 value="{{initPrice}}"
+					 type="digit"
+					 data-field="initPrice"
+					 class="weui-input"
+					 placeholder="选填"
+					/>
+				</mp-cell>
+				<mp-cell
+				 prop="num"
+				 title="持仓数"
+				 ext-class=""
+				>
+					<input
+					 bindinput="formInputChange"
+					 value="{{num}}"
+					 type="digit"
+					 data-field="num"
+					 class="weui-input"
+					 placeholder="选填"
+					/>
+				</mp-cell>
+			</mp-cells>
+		</mp-form>
+
+		<view class="weui-cells__title">
+			<text class="tip">其他信息</text>
+		</view>
+		<view class="weui-cells weui-cells_after-title">
+			<view class="weui-cell weui-cell_switch">
+				<view class="weui-cell__bd">是否今日建仓</view>
+				<view class="weui-cell__ft">
+					<switch
+					 checked="{{isTodybuy}}"
+					 bindchange="changeIsTodybuy"
+					 color="#0b85fe"
+					/>
+				</view>
+			</view>
+		</view>
+		<view class="footer">
+			<text>是否今日在券商平台中建仓该支股票，这里是为了更准确计算'当天收益'</text>
+		</view>
+
+		<view class="weui-btn-area">
+			<button
+			 class="weui-btn"
+			 type="primary"
+			 bindtap="submitForm"
+			>确定
+			</button>
+			<button
+			 class="weui-btn"
+			 type="warn"
+			 bindtap="onDel"
+			>删除
+			</button>
+		</view>
+	</view>
+</view>
+

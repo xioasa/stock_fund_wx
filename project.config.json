@@ -6,7 +6,7 @@
   "setting": {
     "urlCheck": false,
     "es6": true,
-    "enhance": false,
+    "enhance": true,
     "postcss": true,
     "preloadBackgroundData": false,
     "minified": true,
@@ -16,7 +16,7 @@
     "autoAudits": false,
     "showShadowRootInWxmlPanel": true,
     "scopeDataCheck": false,
-    "uglifyFileName": false,
+    "uglifyFileName": true,
     "checkInvalidKey": true,
     "checkSiteMap": true,
     "uploadWithSourceMap": true,
@@ -39,7 +39,7 @@
   "compileType": "miniprogram",
   "libVersion": "2.14.1",
   "appid": "wx6bae142fd7c51ae0",
-  "projectname": "%E8%82%A1%E5%9F%BA%E5%8A%A9%E6%89%8B",
+  "projectname": "自选助手",
   "debugOptions": {
     "hidedInDevtools": []
   },
@@ -62,6 +62,12 @@
         {
           "name": "pages/add/add",
           "pathName": "pages/add/add",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/yield/yield",
+          "pathName": "pages/yield/yield",
           "scene": null
         }
       ]

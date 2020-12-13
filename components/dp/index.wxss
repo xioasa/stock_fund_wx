@@ -1,0 +1,44 @@
+.con {
+  height: 128rpx;
+  border-bottom: 1px solid #efefef;
+  display: flex;
+  overflow-x: scroll;
+}
+.con .item {
+  /* flex: 1; */
+  padding: 8rpx;
+  flex-shrink: 0;
+  width: 25vw;
+  box-sizing: border-box;
+}
+.item view {
+  line-height: 38rpx;
+}
+.name {
+  text-align: center;
+  font-size: 30rpx;
+  color: #222;
+}
+.price {
+  display: flex;
+}
+.price view {
+  flex: 1;
+  font-size: 26rpx;
+}
+
+.num {
+  font-size: 26rpx;
+  text-align: center;
+}
+
+.up {
+  color: #e55723;
+  font-weight: bold;
+}
+
+.down {
+  color: #159d92;
+  font-weight: bold;
+}
+

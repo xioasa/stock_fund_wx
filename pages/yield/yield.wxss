@@ -1,1 +1,69 @@
 /* pages/yield/yield.wxss */
+
+.container {
+  padding: 16rpx 16rpx 0 16rpx;
+  background-color: #f7f7f7;
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+.con {
+  background-color: #fff;
+  margin-top: 16rpx;
+}
+.con:first-child {
+  margin-top: 0rpx;
+}
+
+.info {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 32rpx 0;
+}
+
+.info .item {
+  /* flex: 1; */
+  width: 50%;
+  flex-shrink: 0;
+}
+
+.info .item:nth-child(3) {
+  padding-top: 16rpx;
+}
+
+.info .item:nth-child(4) {
+  padding-top: 16rpx;
+}
+
+.item {
+  text-align: center;
+}
+
+.item-name {
+  font-size: 24rpx;
+  color: #999;
+}
+.item-num {
+  font-size: 44rpx;
+  line-height: 48rpx;
+  /* color: #999; */
+}
+
+.percent-sign {
+  font-size: 38rpx;
+}
+
+.name {
+  text-align: center;
+  line-height: 40rpx;
+  padding: 8rpx 0;
+  border-bottom: 1px solid #f7f7f7;
+}
+.all-title {
+  font-weight: bold;
+}
+.all-num {
+  font-size: 26rpx;
+  color: #666;
+}

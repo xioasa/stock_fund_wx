@@ -1,17 +1,23 @@
-const formatTime = date => {
-  const year = date.getFullYear()
-  const month = date.getMonth() + 1
-  const day = date.getDate()
-  const hour = date.getHours()
-  const minute = date.getMinutes()
-  const second = date.getSeconds()
-
-  return [year, month, day].map(formatNumber).join('/') + ' ' + [hour, minute, second].map(formatNumber).join(':')
-}
-
-const formatNumber = n => {
-  n = n.toString()
-  return n[1] ? n : '0' + n
+/**
+ * 获取日期时间
+ * @param {*} type 
+ * @param {*} symbol 
+ */
+const getTime = (type = 'day', symbol = "-") => {
+  const now = new Date();
+  const year = now.getFullYear(); //得到年份
+  const month = now.getMonth() + 1;//得到月份
+  let date = now.getDate();//得到日期
+  const hour = now.getHours();//得到小时
+  const minu = now.getMinutes();//得到分钟
+  const sec = now.getSeconds();//得到秒
+  if (date <= 9) {
+    date = `0${date}`
+  }
+  if (type === 'day') {
+    return `${year}${symbol}${month}${symbol}${date}`
+  }
+  return `${year}-${month}-${date} ${hour}-${minu}-${sec}`
 }
 
 const guid = () => {
@@ -23,6 +29,6 @@ const guid = () => {
 };
 
 module.exports = {
-  formatTime: formatTime,
+  getTime,
   guid
 }

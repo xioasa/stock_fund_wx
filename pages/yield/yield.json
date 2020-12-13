@@ -1,3 +1,5 @@
 {
-  "usingComponents": {}
+  "usingComponents": {},
+  "navigationBarTitleText": "收益情况",
+  "enablePullDownRefresh": true
 }

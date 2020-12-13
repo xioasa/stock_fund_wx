@@ -1,0 +1,18 @@
+.tip {
+  margin-top: 16px;
+  margin-bottom: 3px;
+  /* padding-left: 16px; */
+  /* padding-right: 16px; */
+  /* color: var(--weui-FG-1); */
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.footer {
+  margin-bottom: 3px;
+  padding-left: 16px;
+  padding-right: 16px;
+  font-size: 12px;
+  line-height: 1.4;
+  color: rgba(0, 0, 0, 0.5);
+}

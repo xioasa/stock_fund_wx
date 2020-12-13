@@ -1,25 +1,22 @@
-<!--index.wxml-->
-<!-- <wxs module="handler" src="./fund.wxs"></wxs> -->
-
 <view class="container">
 	<dp id="dp" />
-	<view class="bg" />
+	<view class=" bg" />
 	<scroll-view
 	 scroll-x="true"
 	 scroll-y="true"
 	 class="scroll-con"
 	>
 		<view class="table">
-			<view class="th th1">基金名称</view>
+			<view class="th th1">股票名称</view>
 			<view class="th th2">
 				<view>涨幅</view>
 				<view
 				 class="sort"
 				 bindtap="onSort"
-				 data-field="gszzl"
+				 data-field="zdf"
 				>
-					<text class="iconfont iconshangsanjiao {{ sortField === 'gszzl_up' ? 'sort-active' : '' }}"></text>
-					<text class="iconfont iconxiasanjiao {{ sortField === 'gszzl_down' ? 'sort-active' : '' }}"></text>
+					<text class="iconfont iconshangsanjiao {{ sortField === 'zdf_up' ? 'sort-active' : '' }}"></text>
+					<text class="iconfont iconxiasanjiao {{ sortField === 'zdf_down' ? 'sort-active' : '' }}"></text>
 				</view>
 			</view>
 			<view class="th th3">
@@ -75,37 +72,35 @@
 					<view
 					 class="tr"
 					 bindtap="onDetail"
-					 data-code="{{item.fundcode}}"
+					 data-code="{{item.code}}"
 					>
-						<view class="td td1" data-code="{{item.fundcode}}">
+						<view class="td td1" data-code="{{item.code}}">
 							<view class="name">{{item.name}}</view>
-							<view class="code">{{item.fundcode}}
-								<text class="is-update" wx:if="{{item.isUpdate}}">今日收益更新</text>
-							</view>
+							<view class="code">{{item.code}}</view>
 						</view>
 						<view class="td td2">
-							<view class="{{item.gszzl >= 0 ? 'up' : 'down'}}">
-								{{item.gszzl}} %
+							<view class="{{item.zdf >= 0 ? 'up' : 'down'}}">
+								{{item.zdf}} %
 							</view>
 							<view class="down-text">
-								{{item.gsz}}
+								{{item.price}}
 							</view>
 						</view>
 						<view class="td td3 flex-right {{item.dtsy >= 0 ? 'up' : 'down'}}">
 							<text wx:if="{{item.dtsy !== 0 && item.dtsy }}">{{item.dtsy}}</text>
 						</view>
-						<view class="td td4 flex-right">{{item.cost || ''}}</view>
+						<view class="td td4 flex-right">{{item.initPrice || ''}}</view>
 						<view class="td td5">
 							<view>
-								{{item.cyje}}
+								{{item.ccje}}
 							</view>
 							<view class="down-text">
 								{{item.num}}
 							</view>
 						</view>
 						<view class="td td6">
-							<view class="{{item.syl >= 0 ? 'up' : 'down'}}">
-								<text wx:if="{{item.syl === 0 || item.syl }}">{{item.syl}}%</text>
+							<view class="{{item.zsyl >= 0 ? 'up' : 'down'}}">
+								<text wx:if="{{item.zsyl === 0 || item.zsyl }}">{{item.zsyl}}%</text>
 							</view>
 							<view class="down-text">{{item.zsy}}</view>
 						</view>

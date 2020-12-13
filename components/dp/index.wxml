@@ -1,0 +1,19 @@
+<!-- <scroll-view scroll-x="true"> -->
+<view class="con">
+
+	<view
+	 wx:for="{{ secidsData }}"
+	 wx:for-item="item"
+	 wx:key="f12"
+	 class="item"
+	>
+		<view class="name">{{item.f14}}</view>
+		<view class="num {{item.f4 >= 0 ? 'up' : 'down'}}">{{item.f2}}</view>
+		<view class="price">
+			<view class="{{item.f4 >= 0 ? 'up' : 'down'}}">{{item.f4}}</view>
+			<view class="{{item.f4 >= 0 ? 'up' : 'down'}}">{{item.f3}}%</view>
+		</view>
+	</view>
+</view>
+<!-- </scroll-view> -->
+

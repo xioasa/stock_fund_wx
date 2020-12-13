@@ -9,12 +9,12 @@
 }
 
 .table {
-  width: 1258rpx;
+  width: 1118rpx;
 }
 
 .tr {
   display: flex;
-  width: 1258rpx;
+  width: 1118rpx;
 }
 
 .th, .td {
@@ -66,7 +66,7 @@
 }
 
 .name {
-  width: 300rpx;
+  width: 160rpx;
   overflow: hidden;
   text-overflow:ellipsis;
   white-space: nowrap;
@@ -89,9 +89,8 @@
   background-color:#fff;
   text-align: right;
 }
-.td1 {
-  z-index:2;
-  color: #333;
+.th1,.td1 {
+  width: 160rpx;
   text-align: left;
 }
 .th:first-child {

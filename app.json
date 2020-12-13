@@ -1,23 +1,28 @@
 {
   "pages": [
+    "pages/stock/index",
+    "pages/stock/add/add",
     "pages/fund/fund",
     "pages/logs/logs",
     "pages/my/my",
     "pages/yield/yield",
-    "pages/add/add"
+    "pages/fund/add/add",
+    "pages/serch/serch"
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "Weixin",
-    "navigationBarTextStyle": "black"
+    "navigationBarBackgroundColor": "#2873ff",
+    "navigationBarTextStyle": "white"
   },
   "tabBar": {
+    "color": "#a9afbd",
+    "selectedColor": "#0b85fe",
     "list": [
-      { "pagePath": "pages/fund/fund", "text": "基" },
-      { "pagePath": "pages/yield/yield", "text": "收益" },
-      { "pagePath": "pages/my/my", "text": "我的" }
-    ]
+      { "pagePath": "pages/stock/index", "text": "股票" },
+      { "pagePath": "pages/fund/fund", "text": "基金" },
+      { "pagePath": "pages/yield/yield", "text": "收益" }
+    ],
+    "backgroundColor": "#ffffff"
   },
   "useExtendedLib": { "weui": true },
   "style": "v2",

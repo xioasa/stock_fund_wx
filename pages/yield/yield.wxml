@@ -1,2 +1,93 @@
-<!--pages/yield/yield.wxml-->
-<text>收益</text>
+<view class="container">
+	<view class="con all" wx:if="{{isShowAll}}">
+		<view class="name">
+			<view class="all-title">总计</view>
+			<view class="all-num">总持仓：{{all.allPosition}}</view>
+		</view>
+		<view class="info">
+			<view class="item">
+				<view class="item-num {{all.todayAllGains >= 0 ? 'up' : 'down'}}">{{all.todayAllGains}}</view>
+				<view class="item-name">当日收益</view>
+			</view>
+			<view class="item">
+				<view class="item-num {{all.todayAllYield >= 0 ? 'up' : 'down'}}">
+					<text>{{all.todayAllYield}}</text>
+					<text class="percent-sign">%</text>
+				</view>
+				<view class="item-name">当日收益率</view>
+			</view>
+			<view class="item">
+				<view class="item-num">{{all.allGains}}</view>
+				<view class="item-name">总收益</view>
+			</view>
+			<view class="item">
+				<view class="item-num">
+					<text>{{all.allYield}}</text>
+					<text class="percent-sign">%</text>
+				</view>
+				<view class="item-name">总收益率</view>
+			</view>
+		</view>
+	</view>
+	<view class="con stock" wx:if="{{isShowStock}}">
+		<view class="name">
+			<view class="all-title">股票</view>
+			<view class="all-num">总持仓：{{stock.allPosition}}</view>
+		</view>
+		<view class="info">
+			<view class="item">
+				<view class="item-num {{stock.todayAllGains >= 0 ? 'up' : 'down'}}">{{stock.todayAllGains}}</view>
+				<view class="item-name">当日收益</view>
+			</view>
+			<view class="item">
+				<view class="item-num {{stock.todayAllYield >= 0 ? 'up' : 'down'}}">
+					<text>{{stock.todayAllYield}}</text>
+					<text class="percent-sign">%</text>
+				</view>
+				<view class="item-name">当日收益率</view>
+			</view>
+			<view class="item">
+				<view class="item-num">{{stock.allGains}}</view>
+				<view class="item-name">总收益</view>
+			</view>
+			<view class="item">
+				<view class="item-num">
+					<text>{{stock.allYield}}</text>
+					<text class="percent-sign">%</text>
+				</view>
+				<view class="item-name">总收益率</view>
+			</view>
+		</view>
+	</view>
+	<view class="con fund" wx:if="{{isShowFund}}">
+		<view class="name">
+			<view class="all-title">基金</view>
+			<view class="all-num">总持仓：{{fund.allPosition}}</view>
+		</view>
+		<view class="info">
+			<view class="item">
+				<view class="item-num {{fund.todayAllGains >= 0 ? 'up' : 'down'}}">{{fund.todayAllGains}}</view>
+				<view class="item-name">当日收益</view>
+			</view>
+			<view class="item">
+				<view class="item-num {{fund.todayAllYield >= 0 ? 'up' : 'down'}}">
+					<text>{{fund.todayAllYield}}</text>
+					<text class="percent-sign">%</text>
+				</view>
+				<view class="item-name">当日收益率</view>
+			</view>
+			<view class="item">
+				<view class="item-num">{{fund.allGains}}</view>
+				<view class="item-name">总收益</view>
+			</view>
+			<view class="item">
+				<view class="item-num">
+					<text>{{fund.allYield}}</text>
+					<text class="percent-sign">%</text>
+				</view>
+				<view class="item-name">总收益率</view>
+			</view>
+		</view>
+	</view>
+</view>
+
