@@ -1,0 +1,22 @@
+<!--index.wxml-->
+<mp-toptips msg="{{error}}" type="error" show="{{error}}"></mp-toptips>
+<view class="container">
+  <view class="card_box">
+    <mp-form id="loginForm" rules="{{loginRules}}" models="{{loginForm}}">
+      <mp-cells>
+        <mp-cell show-error prop="username" title="用户名" ext-class="labelCls">
+          <input bindinput="formInputChange" data-field="username" class="weui-input" placeholder="请输入用户名"/>
+        </mp-cell>
+        <mp-cell show-error prop="password" title="密码" ext-class="labelCls">
+          <input bindinput="formInputChange" type="password" data-field="password" class="weui-input" placeholder="请输入密码"/>
+        </mp-cell>
+      </mp-cells>
+    </mp-form>
+  </view>
+
+  <view class="regis_box">
+    <text bindtap="toRegister">注册</text>
+    <text>忘记密码</text>
+  </view>
+  <button class="loginBtnCls" type="primary" bindtap="clickBtnLogin"> 登 录 </button>
+</view>

@@ -1,0 +1,46 @@
+/* pages/my.wxss */
+.container {
+  min-height: 100vh;
+  background: #f5f5f5;
+  padding-top: 80rpx;
+}
+.card_box{
+  width: 85%;
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 4px 10px #e5e5e5;
+  margin: 0 auto;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+.list-box {
+  margin-top: 40rpx;
+  background: #ffffff;
+}
+.labelCls{
+  text-align: left;
+}
+.labelCls .weui-label{
+  width: 160rpx;
+}
+.card_box .weui-cells{
+  margin-top: 0;
+}
+.card_box .weui-cells::before{
+  border: 0;
+}
+.loginBtnCls{
+  margin-top: 60rpx;
+  width: 80% !important;
+}
+.email_box{
+  display: flex;
+  align-items: center;
+}
+.code_btn{
+  font-size: 28rpx;
+  color: #07c160;
+  cursor: pointer;
+  text-decoration: underline;
+  white-space: nowrap;
+}

@@ -1,0 +1,32 @@
+<!--index.wxml-->
+<mp-toptips msg="{{error}}" type="error" show="{{error}}"></mp-toptips>
+<view class="container">
+  <view class="card_box">
+    <mp-form id="registerForm" rules="{{registerRules}}" models="{{registerForm}}">
+      <mp-cells>
+        <mp-cell show-error prop="username" title="用户名" ext-class="labelCls">
+          <input bindinput="formInputChange" data-field="username" class="weui-input" placeholder="请输入用户名"/>
+        </mp-cell>
+        <mp-cell show-error prop="password" title="密码" ext-class="labelCls">
+          <input bindinput="formInputChange" type="password" data-field="password" class="weui-input" placeholder="请输入密码"/>
+        </mp-cell>
+        <mp-cell show-error prop="conFirmPwd" title="确认密码" ext-class="labelCls">
+          <input bindinput="formInputChange" type="password" data-field="conFirmPwd" class="weui-input" placeholder="请再次输入密码"/>
+        </mp-cell>
+        <mp-cell show-error prop="is_opend_email" title="绑定邮箱" ext-class="labelCls">
+          <switch bindchange="switchChange"/>
+        </mp-cell>
+        <mp-cell wx:if="{{registerForm.is_opend_email}}" show-error prop="email" title="邮箱" ext-class="labelCls">
+          <view class="email_box">
+            <input bindinput="formInputChange" data-field="email" class="weui-input" placeholder="请输入邮箱"/>
+            <view class="code_btn">发送验证码</view>
+          </view>
+        </mp-cell>
+        <mp-cell wx:if="{{registerForm.is_opend_email}}" show-error prop="code" title="验证码" ext-class="labelCls">
+          <input bindinput="formInputChange" data-field="code" class="weui-input" placeholder="请输入验证码"/>
+        </mp-cell>
+      </mp-cells>
+    </mp-form>
+  </view>
+  <button class="loginBtnCls" type="primary" bindtap="clickRegister"> 注 册 </button>
+</view>

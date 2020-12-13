@@ -2,9 +2,11 @@
   "pages": [
     "pages/fund/fund",
     "pages/logs/logs",
-    "pages/my/my",
     "pages/yield/yield",
-    "pages/add/add"
+    "pages/add/add",
+    "pages/my/my",
+    "pages/login/login",
+    "pages/register/register"
   ],
   "window": {
     "backgroundTextStyle": "light",
