@@ -81,6 +81,12 @@
         {
           "name": "pages/register/register",
           "pathName": "pages/register/register",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/exted/index",
+          "pathName": "pages/exted/index",
           "scene": null
         }
       ]

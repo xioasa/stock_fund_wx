@@ -1,0 +1,9 @@
+<view class="con">
+	<image
+	 mode="scaleToFill"
+	 src="{{url}}"
+	 bindtap='previewImg'
+	 class='img'
+	></image>
+</view>
+

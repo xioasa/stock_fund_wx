@@ -3,13 +3,13 @@
 .scroll-con{
   overflow:auto;
   width:100vw;
-  height: calc(100vh - 144rpx);
+  height: calc(100vh - 240rpx);
   border-bottom: 0;
   border-right: 0;
 }
 
 .table {
-  width: 1258rpx;
+  width: 1302rpx;
 }
 
 .tr {
@@ -117,11 +117,11 @@
 }
 
 .td4, .th4 {
-  width: 146rpx;
+  width: 168rpx;
 }
 
 .td5, .th5 {
-  width: 146rpx;
+  width: 168rpx;
 }
 
 .td6,.th6 {

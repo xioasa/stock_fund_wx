@@ -1,4 +1,4 @@
-// 股票收益持仓等计算类
+// 票收益持仓等计算类
 
 const request = require('./request.js');
 const util = require('./util');

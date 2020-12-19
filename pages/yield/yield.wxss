@@ -67,3 +67,9 @@
   font-size: 26rpx;
   color: #666;
 }
+
+.reward {
+  margin-top: 24rpx;
+  padding: 16rpx;
+  background-color: #fff;
+}

@@ -10,24 +10,16 @@
     "pages/add/add",
     "pages/my/my",
     "pages/login/login",
-    "pages/register/register"
+    "pages/register/register",
+    "pages/reward/index",
+    "pages/exted/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#2873ff",
     "navigationBarTextStyle": "white"
   },
-  "tabBar": {
-    "color": "#a9afbd",
-    "selectedColor": "#0b85fe",
-    "list": [
-      { "pagePath": "pages/stock/index", "text": "股票" },
-      { "pagePath": "pages/fund/fund", "text": "基金" },
-      { "pagePath": "pages/yield/yield", "text": "收益" },
-      { "pagePath": "pages/my/my", "text": "我的" }
-    ],
-    "backgroundColor": "#ffffff"
-  },
+
   "useExtendedLib": { "weui": true },
   "style": "v2",
   "sitemapLocation": "sitemap.json"

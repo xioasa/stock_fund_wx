@@ -8,14 +8,14 @@ Page({
 
   onLoad: function (options) {
     const navigationBarTitle = {
-      fund: '基金',
-      stock: '股票',
+      fund: '基',
+      stock: '票',
       dp: '指数',
     };
     wx.setNavigationBarTitle({ title: `查询${navigationBarTitle[options.type]}` })
     const placeholders = {
-      fund: '输入基金名称或者代码',
-      stock: '输入股票名称或者代码',
+      fund: '输入基名称或者代码',
+      stock: '输入票名称或者代码',
       dp: '输入指数名称或者代码',
     };
     this.setData({
@@ -71,7 +71,7 @@ Page({
   },
 
   /**
-   *  股票添加
+   *  票添加
    * @param {*} value 
    */
   stockSelect(data) {
@@ -146,7 +146,7 @@ Page({
   },
 
   /**
-   * 股票查询
+   * 票查询
    */
   stockSearch(valve) {
     return new Promise((resolve, reject) => {

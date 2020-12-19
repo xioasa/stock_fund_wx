@@ -2,8 +2,9 @@
   "usingComponents": {
     "mp-dialog": "weui-miniprogram/dialog/dialog",
     "drag": "../../components/drag/index",
-    "dp": "../../components/dp/index"
+    "dp": "../../components/dp/index",
+    "tabbar": "../../components/tabbar/index"
   },
-  "navigationBarTitleText": "股票",
+  "navigationBarTitleText": "自选助手",
   "enablePullDownRefresh": true
 }

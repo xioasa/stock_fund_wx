@@ -83,17 +83,26 @@ Page({
   },
 
   /**
+   * 打赏
+   */
+  onToReward() {
+    wx.navigateTo({
+      url: '/pages/reward/index'
+    })
+  },
+
+  /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    // 获取股票类中的数据情况
+    // 获取票类中的数据情况
     this.onStock();
     // 获取基金类中的数据情况
     this.onFund();
   },
 
   /**
-   * 股票收益计算
+   * 票收益计算
    */
   onStock() {
     return new Promise((resolve) => {

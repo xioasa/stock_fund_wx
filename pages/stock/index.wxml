@@ -1,13 +1,16 @@
 <view class="container">
-	<dp id="dp" />
+	<view wx:if="{{isShowDp}}">
+		<dp id="dp" />
+	</view>
 	<view class=" bg" />
 	<scroll-view
 	 scroll-x="true"
 	 scroll-y="true"
 	 class="scroll-con"
+	 wx:if="{{dataList.length}}"
 	>
 		<view class="table">
-			<view class="th th1">股票名称</view>
+			<view class="th th1">名称</view>
 			<view class="th th2">
 				<view>涨幅</view>
 				<view
@@ -108,9 +111,24 @@
 				</block>
 			</view>
 			<view class="add">
-				<button class="add-btn" bindtap="add">添加自选</button>
+				<button class="add-btn" bindtap="add">添加自选
+				</button>
 			</view>
 		</view>
 	</scroll-view>
+	<view wx:else>
+		<view class="empty">
+			<view>
+				暂无数据
+			</view>
+			<view>
+				您可以直接添加数据，或登录账号恢复您插件中的数据
+			</view>
+		</view>
+		<view class="add">
+			<button class="add-btn" bindtap="add">添加自选</button>
+		</view>
+	</view>
+	<tabbar/>
 </view>
 
