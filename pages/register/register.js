@@ -2,12 +2,21 @@
 const app = getApp()
 const request = require('../../utils/request.js');
 
-// const emailChecked = function (rule, value) {
-//   console.log(this)
-// }
+// form-conFirmPwd-校验函数
+const conFirmPwdFn = function (rule, value, param, models) {
+  if(!value){
+    return "请再次输入密码"
+  }else if(value != models['password']){
+    return "两次密码输入不一致"
+  }
+}
 
 Page({
   data: {
+    // disableCode倒计时
+    countDownCode: 60,
+    codeTimer: null,
+    codeBtn: false,
     registerForm: {
       is_opend_email: false
     },
@@ -22,7 +31,9 @@ Page({
       },
       {
         name: 'conFirmPwd',
-        rules: {required: true, message: '密码不能为空'},
+        rules: {
+          validator: conFirmPwdFn
+        }
       },
       {
         name: 'email',
@@ -39,8 +50,11 @@ Page({
   },
   // 切换邮箱绑定状态
   switchChange: function (e) {
+    // 选项置空
     this.setData({
       ['registerForm.is_opend_email']: e.detail.value,
+      ['registerForm.email']: "",
+      ['registerForm.code']: "",
       ['registerRules[3].rules.required']: e.detail.value,
       ['registerRules[4].rules.required']: e.detail.value
     })
@@ -55,8 +69,7 @@ Page({
   clickRegister: function () {
     this.selectComponent("#registerForm").validate((valid, errors) => {
       if (valid) {
-        // this.confirmRegister()
-        console.log(this.data.registerForm)
+        this.confirmRegister()
       }else{
         const firstError = Object.keys(errors)
         if (firstError.length) {
@@ -68,20 +81,90 @@ Page({
     })
   },
   // 注册
-  confirmRegister: function(){
+  confirmRegister: function () {
     const url = `${app.baseUrl}/register`;
     const method = "POST";
-    let data = {
-      username: this.data.registerForm.username,
-      password: this.data.registerForm.password
-    }
+    const { username, password, email, code } = this.data.registerForm;
+    console.log(wx.getStorageInfoSync('token'))
     request({
       url,
       method,
-      data,
-      success: (res) => {
-        console.log(res)
+      data: {
+        username: username,
+        password: password,
+        email: email,
+        code: code,
+        is_opend_email: this.data.registerForm.is_opend_email
+      },
+      header: {
+        token: wx.getStorageSync('token')
+      },
+      success: res => {
+        if(res.data.status === "000"){
+          wx.setStorageSync('token', res.data.data.token);
+          wx.showToast({
+            title: "注册成功"
+          });
+          setTimeout(function (){
+            wx.navigateBack({
+              delta: 1
+            })
+          }, 1000)
+        }
       }
+    })
+  },
+  // 发送验证码
+  sendCode: function () {
+    if(this.data.countDownCode > 0 && this.data.codeBtn){
+      return false
+    }
+    if(this.data.registerForm['email']){
+      const url = `${app.baseUrl}/sendMail`;
+      const method = "POST";
+      let data = {
+        email: this.data.registerForm.email
+      }
+      wx.showLoading({
+        title: '加载中',
+      })
+      request({
+        url,
+        method,
+        data,
+        success: res => {
+          wx.hideLoading()
+          if(res.data.status === "000"){
+            this.disableCode()
+            wx.setStorageSync('token', res.data.data.token);
+            wx.showToast({
+              title: "发送成功请注意查收"
+            });
+          }
+        }
+      })
+    }else{
+      wx.showToast({
+        title: "请输入邮箱地址",
+        icon: "none"
+      });
+    }
+  },
+  // 验证码禁用一分钟
+  disableCode: function () {
+    let that = this;
+    let interTimer = setInterval(function(){
+      that.setData({
+        countDownCode: that.data.countDownCode - 1
+      })
+      if(that.data.countDownCode <= 0){
+        clearInterval(that.data.codeTimer)
+      }
+    }, 1000)
+    this.setData({
+      codeBtn: true,
+      countDownCode: 60,
+      codeTimer: interTimer
     })
   }
 })

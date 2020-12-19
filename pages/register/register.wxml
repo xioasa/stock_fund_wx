@@ -19,7 +19,11 @@
         <mp-cell wx:if="{{registerForm.is_opend_email}}" show-error prop="email" title="邮箱" ext-class="labelCls">
           <view class="email_box">
             <input bindinput="formInputChange" data-field="email" class="weui-input" placeholder="请输入邮箱"/>
-            <view class="code_btn">发送验证码</view>
+            <view wx:if="{{!codeBtn}}" bindtap="sendCode" class="code_btn">发送验证码</view>
+            <view wx:else bindtap="sendCode" class="{{countDownCode>0?'disable_btn':'code_btn'}}">
+              <text>重新发送</text>
+              <text wx:if="{{countDownCode>0}}">({{countDownCode}})</text>
+            </view>
           </view>
         </mp-cell>
         <mp-cell wx:if="{{registerForm.is_opend_email}}" show-error prop="code" title="验证码" ext-class="labelCls">

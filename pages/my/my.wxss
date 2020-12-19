@@ -12,8 +12,19 @@
   color: #aaa;
   background: #ffffff;
 }
+.nameCls{
+  color: #333333;
+  font-size: 40rpx;
+  font-weight: 500;
+}
 
 .userinfo_explain {
   color: #aaa;
   margin-top: 20rpx;
+}
+.outLogin_btn{
+  margin-top: 40rpx;
+  width: 90% !important;
+  color: #ffffff !important;
+  background-color: #fa5151 !important;
 }

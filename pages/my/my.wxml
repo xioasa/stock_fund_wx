@@ -7,12 +7,13 @@
       <text class="userinfo_explain">登录后可在多设备间同步数据</text>
     </block>
     <block wx:else>
-      <text>Hello, {{userInfo.user_name}}</text>
+      <text class="nameCls">Hello, {{userInfo.user_name}}</text>
     </block>
   </view>
-  <mp-cells>
-    <mp-cell link value="云备份"></mp-cell>
-    <mp-cell link url="../index" value="云恢复"></mp-cell>
+  <mp-cells wx:if="{{userInfo.user_name}}">
+    <mp-cell bindtap="cloudStorage" link value="云备份"></mp-cell>
+    <mp-cell bindtap="cloudDownload" link url="../index" value="云恢复"></mp-cell>
   </mp-cells>
+  <button wx:if="{{userInfo.user_name}}" type="warn" bindtap="outLogin" class="outLogin_btn"> 退出登录 </button>
 </view>
 

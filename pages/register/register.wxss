@@ -39,7 +39,14 @@
 }
 .code_btn{
   font-size: 28rpx;
-  color: #07c160;
+  color: #0b85fe;
+  cursor: pointer;
+  text-decoration: underline;
+  white-space: nowrap;
+}
+.disable_btn{
+  font-size: 28rpx;
+  color: #aaa;
   cursor: pointer;
   text-decoration: underline;
   white-space: nowrap;

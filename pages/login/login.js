@@ -54,20 +54,28 @@ Page({
       username: this.data.loginForm.username,
       password: this.data.loginForm.password
     }
+    wx.showLoading({
+      title: '加载中',
+    })
     request({
       url,
       method,
       data,
-      success: (res) => {
-        console.log(res)
+      success: res => {
+        wx.hideLoading()
         if(res.data.status === "000"){
           const { user_name, user_create_time, token } = res.data.data;
           wx.setStorageSync('token', token);
           wx.setStorageSync('user_name', user_name);
           wx.setStorageSync('user_create_time', user_create_time);
-          wx.navigateBack({
-            delta: 1,
-          })
+          wx.showToast({
+            title: "登录成功"
+          });
+          setTimeout(function (){
+            wx.navigateBack({
+              delta: 1
+            })
+          }, 1000)
         }
       }
     })
