@@ -3,5 +3,6 @@
     "mp-toptips": "weui-miniprogram/toptips/toptips",
     "mp-cells": "weui-miniprogram/cells/cells",
     "mp-cell": "weui-miniprogram/cell/cell"
-  }
+  },
+  "navigationBarTitleText": "设置"
 }

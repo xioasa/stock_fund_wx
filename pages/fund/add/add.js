@@ -19,7 +19,7 @@ Page({
       });
 
     } else {
-      wx.setNavigationBarTitle({ title: '添加基金' })
+      wx.setNavigationBarTitle({ title: '添加' })
       // 新增
       this.setData({
         name,

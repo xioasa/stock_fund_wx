@@ -1,0 +1,17 @@
+.con {
+  height: 100vh;
+  background-color: #efefef;
+}
+.tip {
+  padding: 24rpx;
+  background-color: #ffffff;
+}
+.link {
+  text-align: center;
+  padding: 24rpx 0;
+}
+.action {
+  padding: 24rpx;
+  margin-top: 24rpx;
+  background-color: #ffffff;
+}

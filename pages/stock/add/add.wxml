@@ -18,7 +18,7 @@
 					 data-field="name"
 					 class="weui-input"
 					 disabled
-					 placeholder="股票名称"
+					 placeholder="名称"
 					/>
 				</mp-cell>
 				<mp-cell
@@ -32,7 +32,7 @@
 					 data-field="code"
 					 class="weui-input"
 					 disabled
-					 placeholder="股票代码"
+					 placeholder="代码"
 					/>
 				</mp-cell>
 				<mp-cell
@@ -82,7 +82,7 @@
 			</view>
 		</view>
 		<view class="footer">
-			<text>是否今日在券商平台中建仓该支股票，这里是为了更准确计算'当天收益'</text>
+			<text>是否今日在券商平台中建仓该支票，这里是为了更准确计算'当天收益'</text>
 		</view>
 
 		<view class="weui-btn-area">

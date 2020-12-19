@@ -1,0 +1,39 @@
+<!-- <scroll-view scroll-x="true"> -->
+<view class="tabbar">
+	<view class="con">
+		<view
+		 bindtap="onLink"
+		 data-url="/pages/stock/index"
+		 wx:if="{{active === '/pages/fund/fund'}}"
+		 class="tab cut {{ active === '/pages/fund/fund' ? 'active' : '' }}"
+		>
+			<text class="iconfont iconqiehuan"></text>
+			切换
+		</view>
+		<view
+		 bindtap="onLink"
+		 data-url="/pages/fund/fund"
+		 wx:if="{{active === '/pages/stock/index'}}"
+		 class="tab cut {{ active === '/pages/stock/index' ? 'active' : '' }}"
+		>
+			<text class="iconfont iconqiehuan"></text>
+			切换
+		</view>
+		<view
+		 bindtap="onLink"
+		 data-url="/pages/yield/yield"
+		 class="tab all {{ active === '/pages/yield/yield' ? 'active' : '' }}"
+		>
+			总计
+		</view>
+		<view
+		 bindtap="onLink"
+		 data-url="/pages/my/my"
+		 class="tab config {{ active === 'pages/register/register' ? 'active' : '' }}"
+		>
+			设置
+		</view>
+	</view>
+</view>
+<!-- </scroll-view> -->
+

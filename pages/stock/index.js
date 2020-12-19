@@ -11,10 +11,14 @@ Page({
     dataList: [],
     copyDataList: [],
     scrollTop: 0,
-    sortField: '' // 排序字段
+    sortField: '', // 排序字段
+    isShowDp: false
   },
   onLoad() {
-    wx.setNavigationBarTitle({ title: "股票" })
+    // wx.setNavigationBarTitle({ title: "自选助手" });
+    this.setData({
+      isShowDp: wx.getStorageSync('isShowDp')
+    });
   },
   onShow() {
     this.getData();

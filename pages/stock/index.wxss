@@ -3,7 +3,7 @@
 .scroll-con{
   overflow:auto;
   width:100vw;
-  height: calc(100vh - 144rpx);
+  height: calc(100vh - 240rpx);
   border-bottom: 0;
   border-right: 0;
 }

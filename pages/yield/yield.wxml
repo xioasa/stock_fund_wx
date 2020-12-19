@@ -31,7 +31,7 @@
 	</view>
 	<view class="con stock" wx:if="{{isShowStock}}">
 		<view class="name">
-			<view class="all-title">股票</view>
+			<view class="all-title">票</view>
 			<view class="all-num">总持仓：{{stock.allPosition}}</view>
 		</view>
 		<view class="info">
@@ -61,7 +61,7 @@
 	</view>
 	<view class="con fund" wx:if="{{isShowFund}}">
 		<view class="name">
-			<view class="all-title">基金</view>
+			<view class="all-title">基</view>
 			<view class="all-num">总持仓：{{fund.allPosition}}</view>
 		</view>
 		<view class="info">
@@ -87,6 +87,27 @@
 				</view>
 				<view class="item-name">总收益率</view>
 			</view>
+		</view>
+	</view>
+	<view class="reward">
+		<button
+		 class="add-btn"
+		 type="warn"
+		 bindtap="onToReward"
+		>打赏支持
+		</button>
+	</view>
+	<view wx:if="{{!isShowFund && !isShowStock}}">
+		<view class="empty">
+			<view>
+				暂无数据
+			</view>
+			<view>
+				您可以直接添加数据，或登录账号恢复您插件中的数据
+			</view>
+		</view>
+		<view class="add">
+			<button class="add-btn" bindtap="add">添加自选</button>
 		</view>
 	</view>
 </view>

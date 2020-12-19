@@ -10,9 +10,13 @@ Page({
     dataList: [],
     copyDataList: [],
     scrollTop: 0,
-    sortField: '' // 排序字段
+    sortField: '', // 排序字段
+    isShowDp: false
   },
   onLoad() {
+    this.setData({
+      isShowDp: wx.getStorageSync('isShowDp')
+    });
   },
   onShow() {
     this.getData();

@@ -22,7 +22,7 @@ Page({
       });
 
     } else {
-      wx.setNavigationBarTitle({ title: '添加股票' })
+      wx.setNavigationBarTitle({ title: '添加' })
       const [Code, MktNum] = code.split('_');
       // 新增
       this.setData({
@@ -55,7 +55,7 @@ Page({
     });
   },
 
-  // 添加股票
+  // 添加票
   submitForm() {
     this.selectComponent('#form').validate((valid, errors) => {
       if (valid) {

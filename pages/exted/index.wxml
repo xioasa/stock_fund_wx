@@ -1,0 +1,14 @@
+<view class="con">
+	<view class="tip">
+		小程序和浏览器插件使用更配哦！通过账号实现云端同步，您在各端都可以实时看到数据
+	</view>
+	<view class="action">
+		<view class="copy">
+			<button bind:tap="copy">点击复制网站</button>
+		</view>
+		<view class="link">
+			https://pu_shu.gitee.io/func/
+		</view>
+	</view>
+</view>
+

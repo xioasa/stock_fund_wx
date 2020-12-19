@@ -1,18 +1,18 @@
-<!--index.wxml-->
-<!-- <wxs module="handler" src="./fund.wxs"></wxs> -->
-
 <view class="container">
-	<dp id="dp" />
+	<view wx:if="{{isShowDp}}">
+		<dp id="dp" />
+	</view>
 	<view class="bg" />
 	<scroll-view
 	 scroll-x="true"
 	 scroll-y="true"
 	 class="scroll-con"
+	 wx:if="{{dataList.length}}"
 	>
 		<view class="table">
 			<view class="th th1">基金名称</view>
 			<view class="th th2">
-				<view>涨幅</view>
+				<view>估值</view>
 				<view
 				 class="sort"
 				 bindtap="onSort"
@@ -34,7 +34,7 @@
 				</view>
 			</view>
 			<view class="th th4">
-				<view>持仓价</view>
+				<view>持仓成本</view>
 				<view
 				 class="sort"
 				 bindtap="onSort"
@@ -45,7 +45,7 @@
 				</view>
 			</view>
 			<view class="th th5">
-				<view>持仓</view>
+				<view>持仓金额</view>
 				<view
 				 class="sort"
 				 bindtap="onSort"
@@ -117,5 +117,19 @@
 			</view>
 		</view>
 	</scroll-view>
+	<view wx:else>
+		<view class="empty">
+			<view>
+				暂无数据
+			</view>
+			<view>
+				您可以直接添加数据，或登录账号恢复您插件中的数据
+			</view>
+		</view>
+		<view class="add">
+			<button class="add-btn" bindtap="add">添加自选</button>
+		</view>
+	</view>
+	<tabbar/>
 </view>
 

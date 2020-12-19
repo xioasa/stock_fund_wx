@@ -4,14 +4,20 @@ const { guid } = require('./utils/util.js');
 App({
   baseUrl: "https://topnamei.top/api",
   onLaunch: function () {
-    // 展示本地存储能力
-    var logs = wx.getStorageSync('logs') || []
-    logs.unshift(Date.now())
-    wx.setStorageSync('logs', logs);
-
     if (!wx.getStorageSync('device_id')) {
       wx.setStorageSync('device_id', guid());
     }
+
+   const stockItemList = wx.getStorageSync('stockItemList') || [];
+   const fundListM = wx.getStorageSync('fundListM') || [];
+   let defaultUrl = '/pages/stock/index';
+   if(!stockItemList.length && fundListM.length) {
+    defaultUrl = '/pages/fund/fund';
+   }
+
+   wx.redirectTo({
+    url: defaultUrl
+  })
 
     // 登录
     wx.login({
