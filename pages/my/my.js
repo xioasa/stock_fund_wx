@@ -117,14 +117,20 @@ Page({
       success: res => {
         wx.hideLoading()
         if(res.data.status === "000"){
-          const contentObj = JSON.parse(res.data.data.user_content);
-          console.log(contentObj)
-          for(let item in contentObj){
-            wx.setStorageSync(item, contentObj[item])
+          const { user_content } = res.data.data;
+          if(user_content){
+            const contentObj = JSON.parse(user_content);
+            for(let item in contentObj){
+              wx.setStorageSync(item, contentObj[item])
+            }
+            wx.showToast({
+              title: "恢复成功！"
+            });
+          }else{
+            wx.showToast({
+              title: "云端暂无备份的数据"
+            });
           }
-          wx.showToast({
-            title: "恢复成功！"
-          });
         }
       }
     })
